@@ -25,7 +25,7 @@ class Trending extends StatelessWidget {
               primary: false,
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
-              itemCount: restaurants == null ? 0 : restaurants.length,
+              itemCount: restaurants == false ? 0 : restaurants.length,
               itemBuilder: (BuildContext context, int index) {
                 Map restaurant = restaurants[index];
 

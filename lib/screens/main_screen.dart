@@ -31,8 +31,12 @@ class _MainScreenState extends State<MainScreen> {
     Add(
       key: null,
     ),
-    Notifications(),
-    Profile(),
+    Notifications(
+      key: null,
+    ),
+    Profile(
+      key: null,
+    ),
   ];
 
   @override

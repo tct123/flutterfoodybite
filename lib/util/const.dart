@@ -33,7 +33,7 @@ class Constants {
     ),
     textSelectionTheme: TextSelectionThemeData(cursorColor: lightAccent),
     colorScheme: ColorScheme.fromSwatch().copyWith(secondary: lightAccent),
-    colorScheme: ColorScheme(surface: lightBG),
+    // colorScheme: ColorScheme(surface: lightBG, brightness: null, primary: null, onPrimary: null, secondary: null, onSecondary: null, error: null, onError: null, onSurface: null),
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -58,6 +58,6 @@ class Constants {
     ),
     textSelectionTheme: TextSelectionThemeData(cursorColor: darkAccent),
     colorScheme: ColorScheme.fromSwatch().copyWith(secondary: darkAccent),
-    colorScheme: ColorScheme(surface: darkBG),
+    //colorScheme: ColorScheme(surface: darkBG),
   );
 }

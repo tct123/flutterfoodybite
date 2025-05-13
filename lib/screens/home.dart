@@ -57,7 +57,7 @@ class Home extends StatelessWidget {
             fontWeight: FontWeight.w800,
           ),
         ),
-        FlatButton(
+        TextButton(
           child: Text(
             "See all (9)",
             style: TextStyle(
@@ -90,7 +90,7 @@ class Home extends StatelessWidget {
             fontWeight: FontWeight.w800,
           ),
         ),
-        FlatButton(
+        TextButton(
           child: Text(
             "See all (9)",
             style: TextStyle(
@@ -124,7 +124,7 @@ class Home extends StatelessWidget {
         primary: false,
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,
-        itemCount: categories == null ? 0 : categories.length,
+        itemCount: categories == false ? 0 : categories.length,
         itemBuilder: (BuildContext context, int index) {
           Map cat = categories[index];
 
@@ -144,7 +144,7 @@ class Home extends StatelessWidget {
         primary: false,
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
-        itemCount: restaurants == null ? 0 : restaurants.length,
+        itemCount: restaurants == false ? 0 : restaurants.length,
         itemBuilder: (BuildContext context, int index) {
           Map restaurant = restaurants[index];
 
@@ -169,7 +169,7 @@ class Home extends StatelessWidget {
         primary: false,
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,
-        itemCount: friends == null ? 0 : friends.length,
+        itemCount: friends == false ? 0 : friends.length,
         itemBuilder: (BuildContext context, int index) {
           String img = friends[index];
 
