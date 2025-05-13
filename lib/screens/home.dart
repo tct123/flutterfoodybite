@@ -14,9 +14,9 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         FocusScopeNode currentFocus = FocusScope.of(context);
-        if(!currentFocus.hasPrimaryFocus){
+        if (!currentFocus.hasPrimaryFocus) {
           currentFocus.unfocus();
         }
       },
@@ -61,7 +61,7 @@ class Home extends StatelessWidget {
           child: Text(
             "See all (9)",
             style: TextStyle(
-              color: Theme.of(context).accentColor,
+              color: Theme.of(context).colorScheme.secondary,
             ),
           ),
           onPressed: () {
@@ -94,7 +94,7 @@ class Home extends StatelessWidget {
           child: Text(
             "See all (9)",
             style: TextStyle(
-              color: Theme.of(context).accentColor,
+              color: Theme.of(context).colorScheme.secondary,
             ),
           ),
           onPressed: () {
@@ -114,9 +114,7 @@ class Home extends StatelessWidget {
 
   buildSearchBar(BuildContext context) {
     return Container(
-        margin: EdgeInsets.fromLTRB(10, 5, 10, 0),
-        child: SearchCard()
-    );
+        margin: EdgeInsets.fromLTRB(10, 5, 10, 0), child: SearchCard());
   }
 
   buildCategoryList(BuildContext context) {

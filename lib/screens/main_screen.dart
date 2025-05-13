@@ -12,7 +12,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  PageController _pageController;
+  late PageController _pageController;
   int _page = 0;
 
   List icons = [
@@ -25,8 +25,12 @@ class _MainScreenState extends State<MainScreen> {
 
   List pages = [
     Home(),
-    Label(),
-    Add(),
+    Label(
+      key: null,
+    ),
+    Add(
+      key: null,
+    ),
     Notifications(),
     Profile(),
   ];
@@ -38,7 +42,7 @@ class _MainScreenState extends State<MainScreen> {
         physics: NeverScrollableScrollPhysics(),
         controller: _pageController,
         onPageChanged: onPageChanged,
-        children: List.generate(5, (index) =>  pages[index] ),
+        children: List.generate(5, (index) => pages[index]),
       ),
       bottomNavigationBar: BottomAppBar(
         child: Row(
@@ -68,9 +72,9 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 
- // void navigationTapped(int page) {
- //    _pageController.jumpToPage(page);
- //  }
+  // void navigationTapped(int page) {
+  //    _pageController.jumpToPage(page);
+  //  }
 
   @override
   void initState() {
@@ -91,18 +95,19 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   buildTabIcon(int index) {
-      return Container(
-        margin: EdgeInsets.fromLTRB( index == 3 ? 30 : 0, 0,  index == 1 ? 30 : 0, 0),
-        child: IconButton(
-          icon: Icon(
-            icons[index],
-            size: 24.0,
-          ),
-          color: _page == index
-              ? Theme.of(context).accentColor
-              : Theme.of(context).textTheme.caption.color,
-          onPressed: () => _pageController.jumpToPage(index),
+    return Container(
+      margin:
+          EdgeInsets.fromLTRB(index == 3 ? 30 : 0, 0, index == 1 ? 30 : 0, 0),
+      child: IconButton(
+        icon: Icon(
+          icons[index],
+          size: 24.0,
         ),
-      );
+        color: _page == index
+            ? Theme.of(context).colorScheme.secondary
+            : Theme.of(context).textTheme.bodySmall?.color,
+        onPressed: () => _pageController.jumpToPage(index),
+      ),
+    );
   }
 }

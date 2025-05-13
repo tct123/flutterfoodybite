@@ -10,40 +10,54 @@ class Constants {
   static Color darkAccent = Color(0xff5563ff);
   static Color lightBG = Color(0xfffcfcff);
   static Color darkBG = Colors.black;
-  static Color ratingBG = Colors.yellow[600];
+  static Color? ratingBG = Colors.yellow[600];
 
   static ThemeData lightTheme = ThemeData(
-    backgroundColor: lightBG,
     primaryColor: lightPrimary,
-    accentColor: lightAccent,
-    cursorColor: lightAccent,
     scaffoldBackgroundColor: lightBG,
     appBarTheme: AppBarTheme(
-      textTheme: TextTheme(
-        headline6: TextStyle(
+      toolbarTextStyle: TextTheme(
+        titleLarge: TextStyle(
           color: darkBG,
           fontSize: 18.0,
           fontWeight: FontWeight.w800,
         ),
-      ),
+      ).bodyMedium,
+      titleTextStyle: TextTheme(
+        titleLarge: TextStyle(
+          color: darkBG,
+          fontSize: 18.0,
+          fontWeight: FontWeight.w800,
+        ),
+      ).titleLarge,
     ),
+    textSelectionTheme: TextSelectionThemeData(cursorColor: lightAccent),
+    colorScheme: ColorScheme.fromSwatch().copyWith(secondary: lightAccent),
+    colorScheme: ColorScheme(surface: lightBG),
   );
 
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
-    backgroundColor: darkBG,
     primaryColor: darkPrimary,
-    accentColor: darkAccent,
     scaffoldBackgroundColor: darkBG,
-    cursorColor: darkAccent,
     appBarTheme: AppBarTheme(
-      textTheme: TextTheme(
-        headline6: TextStyle(
+      toolbarTextStyle: TextTheme(
+        titleLarge: TextStyle(
           color: lightBG,
           fontSize: 18.0,
           fontWeight: FontWeight.w800,
         ),
-      ),
+      ).bodyMedium,
+      titleTextStyle: TextTheme(
+        titleLarge: TextStyle(
+          color: lightBG,
+          fontSize: 18.0,
+          fontWeight: FontWeight.w800,
+        ),
+      ).titleLarge,
     ),
+    textSelectionTheme: TextSelectionThemeData(cursorColor: darkAccent),
+    colorScheme: ColorScheme.fromSwatch().copyWith(secondary: darkAccent),
+    colorScheme: ColorScheme(surface: darkBG),
   );
 }
