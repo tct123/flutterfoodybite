@@ -1,6 +1,6 @@
 {
-    "name": "flutterfoodybite",
-    "short_name": "flutterfoodybite",
+    "name": "flutter_foodybite",
+    "short_name": "flutter_foodybite",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
