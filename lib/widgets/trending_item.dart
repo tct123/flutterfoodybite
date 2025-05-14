@@ -7,13 +7,13 @@ class TrendingItem extends StatefulWidget {
   final String address;
   final String rating;
 
-  TrendingItem({
-    Key? key,
+  const TrendingItem({
+    super.key,
     required this.img,
     required this.title,
     required this.address,
     required this.rating,
-  }) : super(key: key);
+  });
 
   @override
   _TrendingItemState createState() => _TrendingItemState();
@@ -24,7 +24,7 @@ class _TrendingItemState extends State<TrendingItem> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
-      child: Container(
+      child: SizedBox(
         height: MediaQuery.of(context).size.height / 2.5,
         width: MediaQuery.of(context).size.width,
         child: Card(
@@ -35,7 +35,7 @@ class _TrendingItemState extends State<TrendingItem> {
             children: <Widget>[
               Stack(
                 children: <Widget>[
-                  Container(
+                  SizedBox(
                     height: MediaQuery.of(context).size.height / 3.5,
                     width: MediaQuery.of(context).size.width,
                     child: ClipRRect(
@@ -44,7 +44,7 @@ class _TrendingItemState extends State<TrendingItem> {
                         topRight: Radius.circular(10),
                       ),
                       child: Image.asset(
-                        "${widget.img}",
+                        widget.img,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -99,10 +99,10 @@ class _TrendingItemState extends State<TrendingItem> {
               SizedBox(height: 7.0),
               Padding(
                 padding: EdgeInsets.only(left: 15.0),
-                child: Container(
+                child: SizedBox(
                   width: MediaQuery.of(context).size.width,
                   child: Text(
-                    "${widget.title}",
+                    widget.title,
                     style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.w800,
@@ -114,10 +114,10 @@ class _TrendingItemState extends State<TrendingItem> {
               SizedBox(height: 7.0),
               Padding(
                 padding: EdgeInsets.only(left: 15.0),
-                child: Container(
+                child: SizedBox(
                   width: MediaQuery.of(context).size.width,
                   child: Text(
-                    "${widget.address}",
+                    widget.address,
                     style: TextStyle(
                       fontSize: 12.0,
                       fontWeight: FontWeight.w300,

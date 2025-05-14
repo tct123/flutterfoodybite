@@ -9,6 +9,8 @@ import 'package:flutter_foodybite/widgets/search_card.dart';
 import 'package:flutter_foodybite/widgets/slide_item.dart';
 
 class Home extends StatelessWidget {
+  const Home({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -49,7 +51,7 @@ class Home extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Text(
-          "$restaurant",
+          restaurant,
           style: TextStyle(
             fontSize: 20.0,
             fontWeight: FontWeight.w800,
@@ -82,7 +84,7 @@ class Home extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Text(
-          "$category",
+          category,
           style: TextStyle(
             fontSize: 20.0,
             fontWeight: FontWeight.w800,
@@ -116,7 +118,7 @@ class Home extends StatelessWidget {
   }
 
   buildCategoryList(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height / 6,
       child: ListView.builder(
         primary: false,
@@ -135,7 +137,7 @@ class Home extends StatelessWidget {
   }
 
   buildRestaurantList(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height / 2.4,
       width: MediaQuery.of(context).size.width,
       child: ListView.builder(
@@ -161,7 +163,7 @@ class Home extends StatelessWidget {
   }
 
   buildFriendsList() {
-    return Container(
+    return SizedBox(
       height: 50.0,
       child: ListView.builder(
         primary: false,

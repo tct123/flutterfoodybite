@@ -7,13 +7,13 @@ class SlideItem extends StatefulWidget {
   final String address;
   final String rating;
 
-  SlideItem({
-    Key? key,
+  const SlideItem({
+    super.key,
     required this.img,
     required this.title,
     required this.address,
     required this.rating,
-  }) : super(key: key);
+  });
 
   @override
   _SlideItemState createState() => _SlideItemState();
@@ -24,7 +24,7 @@ class _SlideItemState extends State<SlideItem> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
-      child: Container(
+      child: SizedBox(
         height: MediaQuery.of(context).size.height / 2.9,
         width: MediaQuery.of(context).size.width / 1.2,
         child: Card(
@@ -35,7 +35,7 @@ class _SlideItemState extends State<SlideItem> {
             children: <Widget>[
               Stack(
                 children: <Widget>[
-                  Container(
+                  SizedBox(
                     height: MediaQuery.of(context).size.height / 3.7,
                     width: MediaQuery.of(context).size.width,
                     child: ClipRRect(
@@ -44,7 +44,7 @@ class _SlideItemState extends State<SlideItem> {
                         topRight: Radius.circular(10.0),
                       ),
                       child: Image.asset(
-                        "${widget.img}",
+                        widget.img,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -99,10 +99,10 @@ class _SlideItemState extends State<SlideItem> {
               SizedBox(height: 7.0),
               Padding(
                 padding: EdgeInsets.only(left: 15.0),
-                child: Container(
+                child: SizedBox(
                   width: MediaQuery.of(context).size.width,
                   child: Text(
-                    "${widget.title}",
+                    widget.title,
                     style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.w800,
@@ -114,10 +114,10 @@ class _SlideItemState extends State<SlideItem> {
               SizedBox(height: 7.0),
               Padding(
                 padding: EdgeInsets.only(left: 15.0),
-                child: Container(
+                child: SizedBox(
                   width: MediaQuery.of(context).size.width,
                   child: Text(
-                    "${widget.address}",
+                    widget.address,
                     style: TextStyle(
                       fontSize: 12.0,
                       fontWeight: FontWeight.w300,

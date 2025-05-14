@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_foodybite/util/categories.dart';
 
 class Categories extends StatefulWidget {
+  const Categories({super.key});
+
   @override
   _CategoriesState createState() => _CategoriesState();
 }

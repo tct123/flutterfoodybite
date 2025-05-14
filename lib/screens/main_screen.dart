@@ -7,6 +7,8 @@ import 'package:flutter_foodybite/screens/profile.dart';
 import 'notifications.dart';
 
 class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
+
   @override
   _MainScreenState createState() => _MainScreenState();
 }
@@ -49,6 +51,8 @@ class _MainScreenState extends State<MainScreen> {
         children: List.generate(5, (index) => pages[index]),
       ),
       bottomNavigationBar: BottomAppBar(
+        color: Theme.of(context).primaryColor,
+        shape: CircularNotchedRectangle(),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -61,8 +65,6 @@ class _MainScreenState extends State<MainScreen> {
             // SizedBox(width: 7),
           ],
         ),
-        color: Theme.of(context).primaryColor,
-        shape: CircularNotchedRectangle(),
       ),
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -94,7 +96,7 @@ class _MainScreenState extends State<MainScreen> {
 
   void onPageChanged(int page) {
     setState(() {
-      this._page = page;
+      _page = page;
     });
   }
 

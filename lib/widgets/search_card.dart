@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SearchCard extends StatelessWidget {
-  final TextEditingController _searchControl = new TextEditingController();
+  final TextEditingController _searchControl = TextEditingController();
+
+  SearchCard({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CategoryItem extends StatelessWidget {
   final Map cat;
 
-  CategoryItem({required this.cat});
+  const CategoryItem({super.key, required this.cat});
 
   @override
   Widget build(BuildContext context) {

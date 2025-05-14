@@ -4,6 +4,8 @@ import 'package:flutter_foodybite/widgets/search_card.dart';
 import 'package:flutter_foodybite/widgets/trending_item.dart';
 
 class Trending extends StatelessWidget {
+  const Trending({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
